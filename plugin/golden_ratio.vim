@@ -92,6 +92,10 @@ function! s:resize_main_window(window,
     let &l:wrap = b:golden_ratio_saved_wrap
   endif
 
+  if exists('g:clap_closed') && g:clap_closed == 0
+    return
+  endif
+
   " Height has an special condition:
   " When there is only one window, or just windows
   " with a vertical split, the 'command window'
